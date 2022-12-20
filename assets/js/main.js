@@ -55,6 +55,15 @@ function getValues()
 	}
 }
 
+function showMenu() {
+	var x = document.getElementById("myLinks");
+	if (x.style.display === "block") {
+	  x.style.display = "none";
+	} else {
+	  x.style.display = "block";
+	}
+  }
+
 
 function calculateAmortization(balance, interestRate, terms)
 {
@@ -68,18 +77,19 @@ function calculateAmortization(balance, interestRate, terms)
         "Monthly payment: $" + payment.toFixed(2) + "<br />" +
         "Total paid: $" + (payment * terms).toFixed(2) + "<br /><br />";
         
-	result += "<table border='1'>" +
+	result += "<table class='table'>" +
+				 "<thead>"+
 					"<tr>"+
 						"<th>Month #</th>" +
 						"<th>Balance</th>" + 
         				"<th>Interest</th>" + 
-						"<th>Principal</th>";
+						"<th>Principal</th></thead>";
     
 	for (var count = 0; count < terms; ++count)
 	{ 
 		var interest = 0;
 		var monthlyPrincipal = 0;
-		result += "<tr align=center>";
+		result += "<tr>";
 		result += "<td>" + (count + 1) + "</td>";
 		result += "<td> $" + balance.toFixed(2) + "</td>";
 		interest = balance * monthlyRate;

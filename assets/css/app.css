@@ -1,0 +1,92 @@
+body
+{
+    background-color: #fff;
+    color: #000;
+    margin:0px;
+    padding: 0px;
+    font-family: sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.logo
+{
+    font-size: 25px !important;
+    color: #05a081;
+}
+
+input[type=number] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 2px solid rgba(86, 63, 63, 0.203);
+}
+  
+
+a:active, a:link, a:visited, a:hover { text-decoration: none; }
+
+select {
+  padding: 5px 35px 5px 5px;
+  font-size: 16px;
+  border: 1px solid rgb(80, 77, 77);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+select::-ms-expand { 
+    display: none;
+}
+  
+@media screen and (min-width:0\0) {
+    select {
+        background:none\9;
+        padding: 5px\9;
+    } 
+}
+
+.topnav {
+  overflow: hidden;
+  position: relative;
+  border-bottom: 1px solid rgba(55, 55, 55, 0.153);
+  /* background-color: rgb(129, 232, 168); */
+}
+  
+  .topnav #myLinks {
+    display: none;
+  }
+  
+  .topnav a {
+    padding: 15px 16px;
+    text-align: left;
+    display: block;
+  }
+  
+  .topnav a.icon {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 5;
+  }
+  
+  .menu:hover {
+    transform: scale(1.5);
+    color: black;
+  }
+  
+  .topnav a:hover {
+    color: black;
+  }
+
+  #myLinks
+  {
+    background-color: #14523a71;
+  }
+  
+  #myLinks a {
+    color: rgb(255, 255, 255) !important;
+  }
