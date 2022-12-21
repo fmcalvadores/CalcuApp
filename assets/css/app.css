@@ -1,6 +1,6 @@
 body
 {
-    background-color: #fff;
+    background-color: rgb(200, 199, 199);
     color: #000;
     margin:0px;
     padding: 0px;
@@ -49,7 +49,7 @@ select::-ms-expand {
     } 
 }
 
-.topnav {
+.nav {
   overflow: hidden;
   position: relative;
   border-bottom: 1px solid rgba(55, 55, 55, 0.153);
