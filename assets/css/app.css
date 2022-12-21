@@ -78,8 +78,8 @@ select::-ms-expand {
     color: black;
   }
   
-  .topnav a:hover {
-    color: black;
+  .topnav img:hover {
+    transform: scale(1.5);
   }
 
   #myLinks

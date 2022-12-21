@@ -1,0 +1,120 @@
+<html>
+	<head>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<title>CalcuApp</title>		
+            <link rel="icon" href="./assets/img/calcuapp-website-favicon-color.png" type="image/icon type">		
+            <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+            <script type="text/javascript" src="assets/js/font-awesome.min.js"></script>
+            <script type="text/javascript" src="assets/js/bootstrap.bundle.min.js"></script>
+	</head>
+	<body>
+            <!-- Top Navigation Menu -->
+            <nav class="navbar" style="background-color: #e3f2fd;">
+                  <div class="container-fluid">
+                    <a class="navbar-brand" href="index.html" style="color: rgb(48, 205, 163);"><img src="assets/img/calcuapp-website-favicon-color.png" style="width:50px;"/></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                      <div class="offcanvas-header">
+                        <h3 class="offcanvas-title" id="offcanvasNavbarLabel">CalcuApp</h3>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                      </div>
+                      <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                          <li class="nav-item">
+                            <a class="nav-link " aria-current="page" href="index.html">Home</a>
+                          </li>
+                          <li class="nav-item">
+                              <a class="nav-link" href="loancalculator.html">Loan Amortization Calculator</a>
+                            </li>
+
+                            <li class="nav-item">
+                              <a class="nav-link active" href="#">Interest Calculator</a>
+                            </li>
+                          <li class="nav-item">
+                              <a class="nav-link disabled" href="#">BMI Calculator</a>
+                            </li>
+                              <li class="nav-item">
+                              <a class="nav-link disabled" href="#">Date Calculator</a>
+                              </li>
+                              <li class="nav-item">
+                              <a class="nav-link disabled" href="#">Salary Calculator</a>
+                              </li>
+                        </ul>
+                        <footer style="text-align: center;font-size: smaller;bottom: 0;" class="text-muted">
+                              Designed and Built by FMDC
+                        </footer>
+                      </div>
+                    </div>
+                  </div>
+                </nav>
+            <div class="container" style="min-height: 800px;">
+                  <div class="m-5">
+
+                        <div id="alertPlaceholder"></div>
+                        <h3>Interest Inputs</h3>
+                        <h5>Equation:</h5>
+                        <h4>A = P(1 + (rT)))</h4>
+                        <p style="font-size: smaller;">
+                            Where: <br>
+                            A = Total Accrued Amount (principal + interest) <br>
+                            P = Principal Amount<br>
+                            I = Interest Amount<br>
+                            r = Rate of Interest per year in decimal; r = R/100<br>
+                            R = Rate of Interest per year as a percent; R = r * 100<br>
+                            t = Time Period involved in months or years<br>
+                        </p>
+                        <div class="col-md">
+                              <label for="principal" class="form-label"><b>Principal:</b></label>
+                              <input min="0" type="number" value="897000.00" class="form-control" id="principal" data-field="Principal"/>
+                        </div>
+                        <div class="col-md">
+                              <label for="interest" class="form-label"><b>Rate (%):</b></label>
+                              <input min="-1" type="number" value="6.375" class="form-control" id="interest" data-field="Rate"/>
+                        </div>
+                              <div class="col-md">
+                                    <label for="terms"  class="form-label"></label><b>Terms:</b></label>
+                              <!-- <select id="terms"  class="form-control" data-field="Terms"> </select> -->
+                              <input min="-1" type="number" value="30"  class="form-control" id="terms" data-field="Terms"/>
+                        </div>
+
+                        <div class="d-grid gap-2">
+                              <input type="button" class="btn btn-primary mt-3" value="Calculate"  class="form-control" onclick="getValues()" />	
+                        </div>          
+                        <div id="Result"></div>
+                  </div>
+                  
+            </div>	
+            <footer style="text-align: center;font-size: smaller;" class="text-muted">
+                  Designed and Built by FMDC
+            </footer>
+	</body>
+</html>
+
+<script type="text/javascript">
+  
+  var wwOpenInstalled;
+    if (wwOpenInstalled || parent.wwOpenInstalled) {
+        if (window.Event) {
+            document.addEventListener(Event.MOUSEUP);
+        }
+        document.onmouseup = (parent.wwOpenInstalled) ? parent.wwOnMouseUp : wwOnMouseUp;
+    }
+
+    function getValues()
+    {
+        	
+	var principal = document.getElementById("principal");
+	var interestRate =  document.getElementById("interest");
+	var terms = document.getElementById("terms");
+	var dateStart = document.getElementById("dateStart");
+    var resultDiv = document.getElementById("Result");
+	resultDiv.innerHTML = "";
+    var rate = parseFloat(interestRate.value) / 100;
+    var resultDiv = document.getElementById("Result");
+	resultDiv.innerHTML = parseFloat(principal.value) * (1 + (rate * parseInt(terms.value)));
+    }
+
+</script>

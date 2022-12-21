@@ -2,16 +2,16 @@
 	<head>
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-		<title>CalcuApp</title>		
+		<title>CalcuApp</title>
+    <link rel="icon" href="./assets/img/calcuapp-website-favicon-color.png" type="image/icon type">		
             <link rel="stylesheet" href="assets/css/bootstrap.min.css">
             <script type="text/javascript" src="assets/js/font-awesome.min.js"></script>
             <script type="text/javascript" src="assets/js/bootstrap.bundle.min.js"></script>
 	</head>
 	<body>
-            <!-- Top Navigation Menu -->
             <nav class="navbar" style="background-color: #e3f2fd;">
                   <div class="container-fluid">
-                    <a class="navbar-brand" href="#" style="color: rgb(48, 205, 163);">CalcuApp</a>
+                    <a class="navbar-brand topnav" href="index.html" style="color: rgb(48, 205, 163);"><img src="assets/img/calcuapp-website-favicon-color.png" style="width:50px ;"/></a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
                       <span class="navbar-toggler-icon"></span>
                     </button>
@@ -26,23 +26,24 @@
                             <a class="nav-link active" aria-current="page" href="#">Home</a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link" href="#">Interest Calculator</a>
-                          </li>
-                          <li class="nav-item">
-                              <a class="nav-link" href="#">Loan Amortization Calculator</a>
+                              <a class="nav-link" href="loancalculator.html">Loan Amortization Calculator</a>
+                            </li>
+
+                            <li class="nav-item">
+                              <a class="nav-link" href="interestcalculator.html">Interest Calculator</a>
                             </li>
                           <li class="nav-item">
                               <a class="nav-link" href="#">BMI Calculator</a>
                             </li>
                               <li class="nav-item">
-                              <a class="nav-link" href="#">Link</a>
+                              <a class="nav-link" href="#">Date Calculator</a>
                               </li>
                               <li class="nav-item">
-                              <a class="nav-link" href="#">Link</a>
+                              <a class="nav-link" href="#">Salary Calculator</a>
                               </li>
                         </ul>
-                        <footer style="text-align: center;font-size: smaller;" class="text-muted">
-                              Designed and Built by CalcuApp
+                        <footer style="text-align: center;font-size: smaller;bottom: 0;" class="text-muted">
+                          Designed and Built by FMDC
                         </footer>
                       </div>
                     </div>
@@ -50,43 +51,57 @@
                 </nav>
             <div class="container" style="min-height: 800px;">
                   
-                  <div class="m-5">
-                        <form>
-                              
-                              <h3>Loan Inputs</h3>
-                              
-                              <div class="col-md">
-                                    <label for="principal" class="form-label"><b>Loan Amount:</b></label>
-                                    <input min="0" type="number" class="form-control" id="principal" />
-                                    <div class="valid-feedback">
-                                          Looks good!
-                                    </div>
-                              </div>
-                              <div class="col-md">
-                                    <label for="interest" class="form-label"><b>Interest (%):</b></label>
-                                    <input min="0" type="number"  class="form-control" id="interest" />
-                                    <div class="valid-feedback">
-                                          Looks good!
-                                    </div>
-                              </div>
-                              
-                              <label for="terms"  class="form-label"></label><b>Terms:</b></label>
-                              <select id="terms"  class="form-control"> </select>
-                              <div class="d-grid gap-2">
-                                    <input type="button" class="btn btn-primary mt-3" value="Calculate"  class="form-control" onclick="getValues()" />	
-                              </div>
-                              
-                        </form>
-                                                                  
-                        <h3>Loan Breakdown</h3>
-                        <div id="Result"></div>
+              <div class="row mt-5">
+                <div class="col-md-6 mt-3" style="max-height: 500px;">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">Loan Amortization Calculator</h5>
+                      <p class="card-text">This calculator is used for basic calculations of common loan types.</p>
+                      <a href="loancalculator.html" class="btn btn-primary">Calculate Loan</a>
+                    </div>
                   </div>
-                  
+                </div>
+                <div class="col-md-6 mt-3">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">Interest Calculator</h5>
+                      <p class="card-text">This calculator is used for basic calculations of Total Accrued Amount.</p>
+                      <a href="interestcalculator.html" class="btn btn-primary">Calculate Interest</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 mt-3">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">BMI Calculator <span style="color: red;font-size: xx-small;"><i>(Coming Soon)</i></span></h5>
+                      <p class="card-text">This calculator is used for basic calculations of Body Mass Index.</p>
+                      <a href="#" class="btn btn-secondary">Calculate BMI</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 mt-3">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">Date Calculator  <span style="color: red;font-size: xx-small;"><i>(Coming Soon)</i></span></h5>
+                      <p class="card-text">This calculator is used for calculatimg difference between two dates.</p>
+                      <a href="#" class="btn btn-secondary">Go somewhere</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 mt-3">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">Salary Calculator  <span style="color: red;font-size: xx-small;"><i>(Coming Soon)</i></span></h5>
+                      <p class="card-text">This calculator is used for basic calculations of Salary.</p>
+                      <a href="#" class="btn btn-secondary">Go somewhere</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>	
-            <footer style="text-align: center;font-size: smaller;" class="text-muted">
-                  Designed and Built by CalcuApp
+            
+            <footer style="text-align:center;font-size: smaller;" class="text-muted m-5">
+              Designed and Built by FMDC
             </footer>
 	</body>
 </html>
-
-<script type="text/javascript" src="assets/js/main.js"></script>
