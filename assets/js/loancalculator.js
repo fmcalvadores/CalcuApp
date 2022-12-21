@@ -100,14 +100,14 @@ function calculateAmortization(balance, interestRate, terms, dateStart)
 						"<th>Balance</th>" + 
         				"<th>Interest</th>" + 
 						"<th>Principal</th></thead>";
-	// let csvFileData = [
-	// 		['Loan Amount:', balance.toFixed(2)],
-	// 		['Interest Rate:', (interestRate).toFixed(2)],
-	// 		['Loan Amount:', terms],
-	// 		['Number of Months:', payment.toFixed(2)],
-	// 		['Total Payment:',  (payment * terms).toFixed(2)],
-	// 		["Month", "Balance", "Interest", "Principal"]
-	// 	];
+	let csvFileData = [
+			['Loan Amount:', balance.toFixed(2)],
+			['Interest Rate:', (interestRate).toFixed(2)],
+			['Loan Amount:', terms],
+			['Number of Months:', payment.toFixed(2)],
+			['Total Payment:',  (payment * terms).toFixed(2)],
+			["Month", "Balance", "Interest", "Principal"]
+		];
 	
 	for (var count = 0; count < terms; ++count)
 	{ 
@@ -123,14 +123,14 @@ function calculateAmortization(balance, interestRate, terms, dateStart)
 		result += "<td>" + monthlyPrincipal.toFixed(2) + "</td>";
 		result += "</tr>";
 		balance = balance - monthlyPrincipal;
-		//csvFileData.push([date,balance.toFixed(2),interest.toFixed(2),monthlyPrincipal.toFixed(2)]);
+		csvFileData.push([date,balance.toFixed(2),interest.toFixed(2),monthlyPrincipal.toFixed(2)]);
 	}
 
     result += "</table>";
 
-	//csvData = csvFileData;
-//	var downloadBtn = '<a id="downloadBtn" class="btn btn-link" onClick="download_csv_file()">Export as CSV</a>';
-	//result += "<br>" + downloadBtn;
+	csvData = csvFileData;
+	var downloadBtn = '<a id="downloadBtn" class="btn btn-link" onClick="download_csv_file()">Export as CSV</a>';
+	result += "<br>" + downloadBtn;
     return result;
 }
 
