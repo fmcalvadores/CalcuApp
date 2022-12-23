@@ -1,93 +1,108 @@
 <html>
-	<head>
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-		<title>CalcuApp</title>		
-            <link rel="icon" href="./assets/img/calcuapp-website-favicon-color.png" type="image/icon type">		
-            <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-            <script type="text/javascript" src="assets/js/font-awesome.min.js"></script>
-            <script type="text/javascript" src="assets/js/bootstrap.bundle.min.js"></script>
-	</head>
-	<body>
-            <!-- Top Navigation Menu -->
-            <nav class="navbar" style="background-color: #e3f2fd;">
-                  <div class="container-fluid">
-                    <a class="navbar-brand" href="index.html" style="color: rgb(48, 205, 163);"><img src="assets/img/calcuapp-website-favicon-color.png" style="width:50px;"/></a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-                      <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                      <div class="offcanvas-header">
-                        <h3 class="offcanvas-title" id="offcanvasNavbarLabel">CalcuApp</h3>
-                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                      </div>
-                      <div class="offcanvas-body">
-                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                          <li class="nav-item">
-                            <a class="nav-link " aria-current="page" href="index.html">Home</a>
-                          </li>
-                          <li class="nav-item">
-                              <a class="nav-link active" href="#">Loan Amortization Calculator</a>
-                            </li>
 
-                            <li class="nav-item">
-                              <a class="nav-link" href="interestcalculator.html">Interest Calculator</a>
-                            </li>
-                          <li class="nav-item">
-                              <a class="nav-link disabled" href="#">BMI Calculator</a>
-                            </li>
-                              <li class="nav-item">
-                              <a class="nav-link disabled" href="#">Date Calculator</a>
-                              </li>
-                              <li class="nav-item">
-                              <a class="nav-link disabled" href="#">Salary Calculator</a>
-                              </li>
-                        </ul>
-                        <footer style="text-align: center;font-size: smaller;bottom: 0;" class="text-muted">
-                              Designed and Built by FMDC
-                        </footer>
-                      </div>
-                    </div>
+<head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+      <title>CalcuApp</title>
+      <link rel="icon" href="./assets/img/calcuapp-website-favicon-color.png" type="image/icon type">
+      <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+      <script type="text/javascript" src="assets/js/moment.js"></script>
+      <script type="text/javascript" src="assets/js/font-awesome.min.js"></script>
+      <script type="text/javascript" src="assets/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+      <!-- Top Navigation Menu -->
+      <nav class="navbar" style="background-color: #FFFFFF;">
+            <div class="container-fluid">
+                  <a class="navbar-brand" href="index.html" style="color: rgb(48, 205, 163);"><img
+                              src="assets/img/calcuapp-website-favicon-color.png" style="width:50px;" /></a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                        <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                        aria-labelledby="offcanvasNavbarLabel">
+                        <div class="offcanvas-header">
+                              <h3 class="offcanvas-title" id="offcanvasNavbarLabel">CalcuApp</h3>
+                              <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                    aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+                              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                                    <li class="nav-item">
+                                          <a class="nav-link " aria-current="page" href="index.html">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                          <a class="nav-link active" href="#">Loan Amortization Calculator</a>
+                                    </li>
+
+                                    <li class="nav-item">
+                                          <a class="nav-link" href="interestcalculator.html">Interest Calculator</a>
+                                    </li>
+                                    <li class="nav-item">
+                                          <a class="nav-link" href="bmicalculator.html">BMI Calculator</a>
+                                    </li>
+                                    <li class="nav-item">
+                                          <a class="nav-link disabled" href="#">Date Calculator</a>
+                                    </li>
+                                    <li class="nav-item">
+                                          <a class="nav-link disabled" href="#">Salary Calculator</a>
+                                    </li>
+                              </ul>
+                              <footer style="text-align: center;font-size: smaller;bottom: 0;" class="text-muted">
+                                    Designed and Built by FMDC
+                              </footer>
+                        </div>
                   </div>
-                </nav>
-            <div class="container" style="min-height: 800px;">
-                  <div class="m-5">
+            </div>
+      </nav>
+      <div class="container" style="min-height: 800px;">
+            <div class="m-5">
 
-                        <div id="alertPlaceholder"></div>
-                        <h3>Loan Inputs</h3>
-                        
-                        <div class="col-md">
-                              <label for="principal" class="form-label"><b>Loan Amount:</b></label>
-                              <input min="0" type="number" class="form-control" id="principal" data-field="Loan Amount"/>
-                        </div>
-                        <div class="col-md">
-                              <label for="interest" class="form-label"><b>Interest (%):</b></label>
-                              <input min="-1" type="number"  class="form-control" id="interest" data-field="Interest"/>
-                              <div class="valid-feedback">
-                                    Looks good!
-                              </div>
-                        </div>
-                              <div class="col-md">
-                                    <label for="terms"  class="form-label"></label><b>Terms:</b></label>
-                              <select id="terms"  class="form-control" data-field="Terms"> </select>
-                        </div>
-
-                        <div class="col-md">
-                              <label for="dateStart"  class="form-label"></label><b>Date Start:</b></label>
-                              <input min="0" type="date" class="form-control" id="dateStart" value="dateToday()"/>
-                        </div>
-
-                        <div class="d-grid gap-2">
-                              <input type="button" class="btn btn-primary mt-3" value="Calculate"  class="form-control" onclick="getValues()" />	
-                        </div>          
-                        <div id="Result"></div>
-                  </div>
+                  <div id="alertPlaceholder"></div>
+                  <h3>Loan Inputs</h3>
                   
-            </div>	
-            <footer style="text-align: center;font-size: smaller;" class="text-muted">
-                  Designed and Built by FMDC
-            </footer>
-	</body>
+                  <div class="col-md">
+                        <label for="currencySelector" class="form-label"><b>Currency:</b></label>
+                        <select id="currencySelector" class="form-control" data-field="Currency" placeholder="Currency"> </select>
+                  </div>
+                  <div class="col-md">
+                        <label for="principal" class="form-label"><b>Loan Amount:</b></label>
+                        <input min="0" type="number" class="form-control" id="principal" placeholder="Loan Amount" data-field="Loan Amount" />
+                  </div>
+                  <div class="col-md">
+                        <label for="interest" class="form-label"><b>Interest Rate (%):</b></label>
+                        <input min="-1" type="number" class="form-control" id="interest" data-field="Interest" placeholder="Interest Rate" />
+                        <div class="valid-feedback">
+                              Looks good!
+                        </div>
+                  </div>
+                  <div class="col-md">
+                        <label for="terms" class="form-label"></label><b>Terms:</b></label>
+                        <select id="terms" class="form-control" data-field="Terms"> </select>
+                  </div>
+
+                  <div class="col-md">
+                        <label for="dateStart" class="form-label"></label><b>Date Start:</b></label>
+                        <input min="0" type="date" class="form-control" id="dateStart" value="dateToday()" />
+                  </div>
+
+                  <div class="d-grid gap-2">
+                        <input type="button" class="btn btn-primary mt-3" value="Calculate" class="form-control"
+                              onclick="getValues()" />
+                  </div>
+                  <div id="Result"></div>
+            </div>
+
+      </div>
+      <footer style="text-align: center;font-size: smaller;" class="text-muted">
+            Designed and Built by FMDC
+      </footer>
+</body>
+
 </html>
 
+<script type="text/javascript" src="assets/js/currency.min.js"></script>
+<script type="text/javascript" src="assets/js/client.js"></script>
 <script type="text/javascript" src="assets/js/loancalculator.js"></script>

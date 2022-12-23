@@ -1,0 +1,145 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <title>CalcuApp</title>
+    <link rel="icon" href="./assets/img/calcuapp-website-favicon-color.png" type="image/icon type">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+    <script type="text/javascript" src="assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/popper.min.js"></script>
+    <script type="text/javascript" src="assets/js/moment.js"></script>
+    <script type="text/javascript" src="assets/js/font-awesome.min.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+    <!-- Top Navigation Menu -->
+    <nav class="navbar" style="background-color: #FFFFFF;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html" style="color: rgb(48, 205, 163);"><img
+                    src="assets/img/calcuapp-website-favicon-color.png" style="width:50px;" /></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h3 class="offcanvas-title" id="offcanvasNavbarLabel">CalcuApp</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link " aria-current="page" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="loancalculator.html">Loan Amortization Calculator</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="interestcalculator.html">Interest Calculator</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">BMI Calculator</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="#">Date Calculator</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="#">Salary Calculator</a>
+                        </li>
+                    </ul>
+                    <footer style="text-align: center;font-size: smaller;bottom: 0;" class="text-muted">
+                        Designed and Built by FMDC
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container" style="min-height: 800px;">
+        <div class="m-5">
+
+            <div id="alertPlaceholder"></div>
+            <h3>BMI Calculator
+            </h3>
+
+            <div>
+
+                <div class="col-md">
+                    <label for="age" class="form-label"><b>Age:</b></label>
+                    <input min="0" max="120" value="27" type="number" class="form-control" placeholder="Age" id="age"
+                        data-field="Age" />
+                </div>
+                <div class="col-md">
+                    <label for="height" class="form-label"><b>Height:</b></label>
+                    <input min="0" type="number" value="161.5" placeholder="Height in cm" class="form-control"
+                        id="height" data-field="Height" />
+                </div>
+                <div class="col-md">
+                    <label for="weight" class="form-label"></label><b>Weight:</b></label>
+                    <input min="0" type="number" value="80" placeholder="Weight in kg" class="form-control" id="weight"
+                        data-field="Weight" />
+                </div>
+
+                <div class="d-grid gap-2">
+                    <input type="button" class="btn btn-primary mt-3" value="Calculate" class="form-control"
+                        onclick="getValues()" />
+                </div>
+
+                <div class="col-md mt-5">
+                    <table class="table table-bordered border-secondary" style="font-size:smaller;">
+                        <thead>
+                            <tr>
+                                <th>Category</th>
+                                <th>Weight Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="weight-status" id="underweight">
+                                <td>Underweight</td>
+                                <td>Below 18.5</td>
+                            </tr>
+                            <tr class="weight-status" id="healthy">
+                                <td>Healthy</td>
+                                <td>18.5 - 24.9</td>
+                            </tr>
+                            <tr class="weight-status" id="overweight">
+                                <td>Overweight</td>
+                                <td>25 - 29.9</td>
+                            </tr>
+                            <tr class="weight-status" id="obesity">
+                                <td>Obesity</td>
+                                <td>30 And Above</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+            <div>
+                <div id="collapseAdult" class="collapse">
+
+                </div>
+            </div>
+
+
+
+            <div id="Result"></div>
+        </div>
+
+    </div>
+    <footer style="text-align: center;font-size: smaller;" class="text-muted">
+        Designed and Built by FMDC
+    </footer>
+</body>
+
+</html>
+
+
+<script type="text/javascript" src="assets/js/client.js"></script>
+<script type="text/javascript" src="assets/js/currency.min.js"></script>
+<script type="text/javascript" src="assets/js/bmicalculator.js"></script>

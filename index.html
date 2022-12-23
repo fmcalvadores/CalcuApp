@@ -1,107 +1,128 @@
 <html>
-	<head>
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-		<title>CalcuApp</title>
-    <link rel="icon" href="./assets/img/calcuapp-website-favicon-color.png" type="image/icon type">		
-            <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-            <script type="text/javascript" src="assets/js/font-awesome.min.js"></script>
-            <script type="text/javascript" src="assets/js/bootstrap.bundle.min.js"></script>
-	</head>
-	<body>
-            <nav class="navbar" style="background-color: #e3f2fd;">
-                  <div class="container-fluid">
-                    <a class="navbar-brand topnav" href="index.html" style="color: rgb(48, 205, 163);"><img src="assets/img/calcuapp-website-favicon-color.png" style="width:50px ;"/></a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-                      <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                      <div class="offcanvas-header">
-                        <h3 class="offcanvas-title" id="offcanvasNavbarLabel">CalcuApp</h3>
-                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                      </div>
-                      <div class="offcanvas-body">
-                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                          <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
-                          </li>
-                          <li class="nav-item">
-                              <a class="nav-link" href="loancalculator.html">Loan Amortization Calculator</a>
-                            </li>
 
-                            <li class="nav-item">
-                              <a class="nav-link" href="interestcalculator.html">Interest Calculator</a>
-                            </li>
-                          <li class="nav-item">
-                              <a class="nav-link" href="#">BMI Calculator</a>
-                            </li>
-                              <li class="nav-item">
-                              <a class="nav-link" href="#">Date Calculator</a>
-                              </li>
-                              <li class="nav-item">
-                              <a class="nav-link" href="#">Salary Calculator</a>
-                              </li>
-                        </ul>
-                        <footer style="text-align: center;font-size: smaller;bottom: 0;" class="text-muted">
-                          Designed and Built by FMDC
-                        </footer>
-                      </div>
-                    </div>
-                  </div>
-                </nav>
-            <div class="container" style="min-height: 800px;">
-                  
-              <div class="row mt-5">
-                <div class="col-md-6 mt-3" style="max-height: 500px;">
-                  <div class="card">
-                    <div class="card-body">
-                      <h5 class="card-title">Loan Amortization Calculator</h5>
-                      <p class="card-text">This calculator is used for basic calculations of common loan types.</p>
-                      <a href="loancalculator.html" class="btn btn-primary">Calculate Loan</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6 mt-3">
-                  <div class="card">
-                    <div class="card-body">
-                      <h5 class="card-title">Interest Calculator</h5>
-                      <p class="card-text">This calculator is used for basic calculations of Total Accrued Amount.</p>
-                      <a href="interestcalculator.html" class="btn btn-primary">Calculate Interest</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6 mt-3">
-                  <div class="card">
-                    <div class="card-body">
-                      <h5 class="card-title">BMI Calculator <span style="color: red;font-size: xx-small;"><i>(Coming Soon)</i></span></h5>
-                      <p class="card-text">This calculator is used for basic calculations of Body Mass Index.</p>
-                      <a href="#" class="btn btn-secondary">Calculate BMI</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6 mt-3">
-                  <div class="card">
-                    <div class="card-body">
-                      <h5 class="card-title">Date Calculator  <span style="color: red;font-size: xx-small;"><i>(Coming Soon)</i></span></h5>
-                      <p class="card-text">This calculator is used for calculatimg difference between two dates.</p>
-                      <a href="#" class="btn btn-secondary">Go somewhere</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6 mt-3">
-                  <div class="card">
-                    <div class="card-body">
-                      <h5 class="card-title">Salary Calculator  <span style="color: red;font-size: xx-small;"><i>(Coming Soon)</i></span></h5>
-                      <p class="card-text">This calculator is used for basic calculations of Salary.</p>
-                      <a href="#" class="btn btn-secondary">Go somewhere</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>	
-            
-            <footer style="text-align:center;font-size: smaller;" class="text-muted m-5">
-              Designed and Built by FMDC
-            </footer>
-	</body>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <title>CalcuApp</title>
+  <link rel="icon" href="./assets/img/calcuapp-website-favicon-color.png" type="image/icon type">
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <script type="text/javascript" src="assets/js/font-awesome.min.js"></script>
+  <script type="text/javascript" src="assets/js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript" src="assets/js/moment.js"></script>
+</head>
+
+<body>
+  <nav class="navbar" style="background-color: #FFFFFF;">
+    <div class="container-fluid">
+      <a class="navbar-brand topnav" href="index.html" style="color: rgb(48, 205, 163);">
+        <img src="assets/img/calcuapp-website-favicon-color.png" style="width:50px;"/>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+        aria-controls="offcanvasNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <h3 class="offcanvas-title" id="offcanvasNavbarLabel">CalcuApp</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="loancalculator.html">Loan Amortization Calculator</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="interestcalculator.html">Interest Calculator</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="bmicalculator.html">BMI Calculator</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">Date Calculator</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">Salary Calculator</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+          </ul>
+          <footer style="text-align: center;font-size: smaller;bottom: 0;" class="text-muted">
+            Designed and Built by FMDC
+          </footer>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="container" style="min-height: 800px;">
+
+    <figure>
+      <blockquote class="blockquote">
+        <b><p>Welcome to CalcuApp!</p></b>
+      </blockquote>
+      <p>CalcuApp is an online calculator that gives you fast, convenient and free online calculators such as Loan Calculator, Interest Calculator, BMI Calculator, Date Calculator and Salary Calculator.</p>
+      <p>CalcuApp is an online calculator that gives you fast, convenient and free online calculators such as Loan Calculator, Interest Calculator, BMI Calculator, Date Calculator and Salary Calculator.</p>
+    </figure>
+
+    <div class="row mt-5">
+      <div class="col-md-6 mt-3" style="max-height: 500px;">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Loan Amortization Calculator</h5>
+            <p class="card-text">This calculator is used for basic calculations of common loan types.</p>
+            <a href="loancalculator.html" class="btn btn-primary">Calculate Loan</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 mt-3">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Interest Calculator</h5>
+            <p class="card-text">This calculator is used for basic calculations of Total Accrued Amount.</p>
+            <a href="interestcalculator.html" class="btn btn-primary">Calculate Interest</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 mt-3">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">BMI Calculator <span style="color: blue;font-size: xx-small;"><i>(New)</i></span>
+            </h5>
+            <p class="card-text">This calculator is used for basic calculations of Body Mass Index.</p>
+            <a href="bmicalculator.html" class="btn btn-primary">Calculate BMI</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 mt-3">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Date Calculator <span style="color: red;font-size: xx-small;"><i>(Coming
+                  Soon)</i></span></h5>
+            <p class="card-text">This calculator is used for calculatimg difference between two dates.</p>
+            <a href="#" class="btn btn-secondary">Calculate Date</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 mt-3">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Salary Calculator <span style="color: red;font-size: xx-small;"><i>(Coming
+                  Soon)</i></span></h5>
+            <p class="card-text">This calculator is used for basic calculations of Salary.</p>
+            <a href="#" class="btn btn-secondary">Calculate Salary</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer style="text-align:center;font-size: smaller;" class="text-muted m-5">
+    Designed and Built by FMDC
+  </footer>
+</body>
+
 </html>
