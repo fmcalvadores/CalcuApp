@@ -16,7 +16,7 @@
 
 <body>
   <!-- Top Navigation Menu -->
-  <nav class="navbar" style="background-color: #FFFFFF;">
+  <nav class="navbar p-3" style="background-color: #FFFFFF;">
     <div class="container-fluid">
       <a class="navbar-brand" href="index.html" style="color: rgb(48, 205, 163);">
         <img src="assets/img/calcuapp-logo.png" class="app_logo"/>
@@ -27,7 +27,9 @@
       </button>
       <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
         <div class="offcanvas-header">
-          <h3 class="offcanvas-title" id="offcanvasNavbarLabel">CalcuApp</h3>
+          <h3 class="offcanvas-title" id="offcanvasNavbarLabel">
+            <img src="assets/img/calcuapp-logo.png" class="app_logo"/>
+          </h3>
           <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
@@ -80,28 +82,32 @@
         </p>
       </div>
 
-      <div class="col-md">
-        <label for="currencySelector" class="form-label"><b>Currency:</b></label>
-        <select id="currencySelector" class="form-control" data-field="Currency"> </select>
-      </div>
-      <div class="col-md">
-        <label for="principal" class="form-label"><b>Principal Amount:</b></label>
-        <input min="0" type="number" class="form-control" id="principal" data-field="Principal Amount" placeholder="Principal Amount"/>
-      </div>
-      <div class="col-md">
-        <label for="interest" class="form-label"><b>Interest Rate (%):</b></label>
-        <input min="0" type="number" class="form-control" id="interest" data-field="Rate" placeholder="Interest Rate" />
-      </div>
-      <div class="col-md">
-        <label for="terms" class="form-label"></label><b>Terms:</b></label>
-        <select id="terms"  class="form-control" data-field="Terms"> </select>
-        <!-- <input min="-1" type="number" value="30" class="form-control" id="terms" data-field="Terms" /> -->
-      </div>
+      <form id="interest_form">
+        <div class="col-md">
+          <label for="currencySelector" class="form-label"><b>Currency:</b></label>
+          <select id="currencySelector" class="form-control" data-field="Currency"> </select>
+        </div>
+        <div class="col-md">
+          <label for="principal" class="form-label"><b>Principal Amount:</b></label>
+          <input min="0" type="number" class="form-control" id="principal" data-field="Principal Amount" placeholder="Principal Amount"/>
+        </div>
+        <div class="col-md">
+          <label for="interest" class="form-label"><b>Interest Rate (%):</b></label>
+          <input min="0" type="number" class="form-control" id="interest" data-field="Rate" placeholder="Interest Rate" />
+        </div>
+        <div class="col-md">
+          <label for="terms" class="form-label"></label><b>Terms:</b></label>
+          <select id="terms"  class="form-control" data-field="Terms"> </select>
+          <!-- <input min="-1" type="number" value="30" class="form-control" id="terms" data-field="Terms" /> -->
+        </div>
+      </form>
 
-      <div class="d-grid gap-2">
-        <input type="button" class="btn btn-primary mt-3" value="Calculate" class="form-control"
-          onclick="getValues()" />
-      </div>
+      <div class="d-flex gap-1 mt-2">
+        <input type="button" class="btn btn-outline-secondary col-md-6" value="Clear"
+              class="form-control" onclick="reset('interest_form')" />
+        <input type="button" class="btn btn-primary col-md-6" value="Calculate" class="form-control"
+              onclick="getValues()" />
+  </div>
       <div id="Result"></div>
     </div>
 

@@ -16,10 +16,10 @@
 
 <body>
     <!-- Top Navigation Menu -->
-    <nav class="navbar" style="background-color: #FFFFFF;">
+    <nav class="navbar p-3" style="background-color: #FFFFFF;">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html" style="color: rgb(48, 205, 163);">
-                <img src="assets/img/calcuapp-logo.png" class="app_logo"/>
+                <img src="assets/img/calcuapp-logo.png" class="app_logo" />
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
                 aria-controls="offcanvasNavbar">
@@ -28,7 +28,9 @@
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
                 aria-labelledby="offcanvasNavbarLabel">
                 <div class="offcanvas-header">
-                    <h3 class="offcanvas-title" id="offcanvasNavbarLabel">CalcuApp</h3>
+                    <h3 class="offcanvas-title" id="offcanvasNavbarLabel">
+                        <img src="assets/img/calcuapp-logo.png" class="app_logo" />
+                    </h3>
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">
@@ -67,26 +69,28 @@
             <h3>BMI Calculator
             </h3>
 
-            <div>
+            <form id="bmi_form">
 
                 <div class="col-md">
                     <label for="age" class="form-label"><b>Age:</b></label>
-                    <input min="0" max="120" value="27" type="number" class="form-control" placeholder="Age" id="age"
+                    <input min="0" max="120" type="number" class="form-control" placeholder="Age" id="age"
                         data-field="Age" />
                 </div>
                 <div class="col-md">
                     <label for="height" class="form-label"><b>Height:</b></label>
-                    <input min="0" type="number" value="161.5" placeholder="Height in cm" class="form-control"
-                        id="height" data-field="Height" />
+                    <input min="0" type="number" placeholder="Height in cm" class="form-control" id="height"
+                        data-field="Height" />
                 </div>
                 <div class="col-md">
                     <label for="weight" class="form-label"></label><b>Weight:</b></label>
-                    <input min="0" type="number" value="80" placeholder="Weight in kg" class="form-control" id="weight"
+                    <input min="0" type="number" placeholder="Weight in kg" class="form-control" id="weight"
                         data-field="Weight" />
                 </div>
 
-                <div class="d-grid gap-2">
-                    <input type="button" class="btn btn-primary mt-3" value="Calculate" class="form-control"
+                <div class="d-flex gap-1 mt-2">
+                    <input type="button" class="btn btn-outline-secondary col-md-6" value="Clear" class="form-control"
+                        onclick="reset('loan_form')" />
+                    <input type="button" class="btn btn-primary col-md-6" value="Calculate" class="form-control"
                         onclick="getValues()" />
                 </div>
 
@@ -120,15 +124,7 @@
                     </table>
                 </div>
 
-            </div>
-            <div>
-                <div id="collapseAdult" class="collapse">
-
-                </div>
-            </div>
-
-
-
+            </form>
             <div id="Result"></div>
         </div>
 

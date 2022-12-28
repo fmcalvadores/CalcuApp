@@ -15,14 +15,16 @@ Date.prototype.toDateInputValue = (function () {
 	return local.toJSON().slice(0, 10);
 });
 
-document.getElementById('dateStart').value = new Date().toDateInputValue();
+//document.getElementById('dateStart').value = new Date().toDateInputValue();
+
+
 
 function getValues() {
 
 	var balance = document.getElementById("principal");
 	var interestRate = document.getElementById("interest");
 	var terms = document.getElementById("terms");
-	var dateStart = document.getElementById("dateStart");
+	//var dateStart = document.getElementById("dateStart");
 	var currencySelector = document.getElementById("currencySelector");
 	selectedCurrency = currencySelector.value;
 	var resultDiv = document.getElementById("Result");
@@ -38,7 +40,7 @@ function getValues() {
 		return;
 	}
 
-	resultDiv.innerHTML += calculateAmortization(parseFloat(balance.value), parseFloat(interestRate.value), parseInt(terms.value), dateStart.value,selectedCurrency);
+	resultDiv.innerHTML += calculateAmortization(parseFloat(balance.value), parseFloat(interestRate.value), parseInt(terms.value), selectedCurrency);
 }
 
 function showMenu() {
@@ -52,7 +54,7 @@ function showMenu() {
 
 var csvData = [];
 
-function calculateAmortization(balance, interestRate, terms, dateStart,currencyCode) {
+function calculateAmortization(balance, interestRate, terms,currencyCode) {
 
 	var monthlyRate = interestRate / 100.00 / 12;
 	var payment = balance * (monthlyRate / (1 - Math.pow(
@@ -87,8 +89,8 @@ function calculateAmortization(balance, interestRate, terms, dateStart,currencyC
 		let interest = 0;
 		let monthlyPrincipal = 0;
 		result += "<tr>";
-		let date = addMonths(dateStart, (count + 1));
-		result += "<td>" + date + "</td>";
+		//let date = addMonths(dateStart, (count + 1));
+		result += "<td>" + (count + 1) + "</td>";
 		result += "<td>" + moneyFormatter(currencyCode,balance.toFixed(2)) + "</td>";
 		interest = balance * monthlyRate;
 		result += "<td>" + moneyFormatter(currencyCode,interest.toFixed(2)) + "</td>";

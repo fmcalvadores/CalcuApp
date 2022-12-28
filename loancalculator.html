@@ -6,6 +6,7 @@
       <title>CalcuApp</title>
       <link rel="icon" href="./assets/img/calcuapp-website-favicon-color.png" type="image/icon type">
       <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+      <link rel="stylesheet" href="assets/css/app.css">
       <script type="text/javascript" src="assets/js/moment.js"></script>
       <script type="text/javascript" src="assets/js/font-awesome.min.js"></script>
       <script type="text/javascript" src="assets/js/bootstrap.bundle.min.js"></script>
@@ -13,10 +14,10 @@
 
 <body>
       <!-- Top Navigation Menu -->
-      <nav class="navbar" style="background-color: #FFFFFF;">
+      <nav class="navbar p-3" style="background-color: #FFFFFF;">
             <div class="container-fluid">
                   <a class="navbar-brand" href="index.html" style="color: rgb(48, 205, 163);">
-                        <img src="assets/img/calcuapp-logo.png" class="app_logo"/>
+                        <img src="assets/img/calcuapp-logo.png" class="app_logo" />
                   </a>
                   <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
                         data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
@@ -25,7 +26,9 @@
                   <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
                         aria-labelledby="offcanvasNavbarLabel">
                         <div class="offcanvas-header">
-                              <h3 class="offcanvas-title" id="offcanvasNavbarLabel">CalcuApp</h3>
+                              <h3 class="offcanvas-title" id="offcanvasNavbarLabel">
+                                    <img src="assets/img/calcuapp-logo.png" class="app_logo"/>
+                              </h3>
                               <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
                                     aria-label="Close"></button>
                         </div>
@@ -63,34 +66,41 @@
 
                   <div id="alertPlaceholder"></div>
                   <h3>Loan Inputs</h3>
-                  
-                  <div class="col-md">
-                        <label for="currencySelector" class="form-label"><b>Currency:</b></label>
-                        <select id="currencySelector" class="form-control" data-field="Currency" placeholder="Currency"> </select>
-                  </div>
-                  <div class="col-md">
-                        <label for="principal" class="form-label"><b>Loan Amount:</b></label>
-                        <input min="0" type="number" class="form-control" id="principal" placeholder="Loan Amount" data-field="Loan Amount" />
-                  </div>
-                  <div class="col-md">
-                        <label for="interest" class="form-label"><b>Interest Rate (%):</b></label>
-                        <input min="-1" type="number" class="form-control" id="interest" data-field="Interest" placeholder="Interest Rate" />
-                        <div class="valid-feedback">
-                              Looks good!
+                  <form id="loan_form">
+                        <div class="col-md">
+                              <label for="currencySelector" class="form-label"><b>Currency:</b></label>
+                              <select id="currencySelector" class="form-control" data-field="Currency"
+                                    placeholder="Currency"> </select>
                         </div>
-                  </div>
-                  <div class="col-md">
-                        <label for="terms" class="form-label"></label><b>Terms:</b></label>
-                        <select id="terms" class="form-control" data-field="Terms"> </select>
-                  </div>
+                        <div class="col-md">
+                              <label for="principal" class="form-label"><b>Loan Amount:</b></label>
+                              <input min="0" type="number" class="form-control" id="principal" placeholder="Loan Amount"
+                                    data-field="Loan Amount" />
+                        </div>
+                        <div class="col-md">
+                              <label for="interest" class="form-label"><b>Interest Rate (%):</b></label>
+                              <input min="-1" type="number" class="form-control" id="interest" data-field="Interest"
+                                    placeholder="Interest Rate" />
+                              <div class="valid-feedback">
+                                    Looks good!
+                              </div>
+                        </div>
+                        <div class="col-md">
+                              <label for="terms" class="form-label"></label><b>Terms:</b></label>
+                              <select id="terms" class="form-control" data-field="Terms"> </select>
+                        </div>
+                  </form>
 
-                  <div class="col-md">
+
+                  <!-- <div class="col-md">
                         <label for="dateStart" class="form-label"></label><b>Date Start:</b></label>
                         <input min="0" type="date" class="form-control" id="dateStart" value="dateToday()" />
-                  </div>
+                  </div> -->
 
-                  <div class="d-grid gap-2">
-                        <input type="button" class="btn btn-primary mt-3" value="Calculate" class="form-control"
+                  <div class="d-flex gap-1 mt-2">
+                        <input type="button" class="btn btn-outline-secondary col-md-6" value="Clear"
+                              class="form-control" onclick="reset('loan_form')" />
+                        <input type="button" class="btn btn-primary col-md-6" value="Calculate" class="form-control"
                               onclick="getValues()" />
                   </div>
                   <div id="Result"></div>

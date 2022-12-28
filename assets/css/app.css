@@ -10,3 +10,9 @@ html {
 {
   width:150px;
 }
+
+.active
+{
+  color:#31C48D !important;
+  font-weight: bolder;
+}
