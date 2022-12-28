@@ -19,7 +19,7 @@
   <nav class="navbar p-3" style="background-color: #FFFFFF;">
     <div class="container-fluid">
       <a class="navbar-brand" href="index.html" style="color: rgb(48, 205, 163);">
-        <img src="assets/img/calcuapp-logo.png" class="app_logo"/>
+        <img src="assets/img/calcuapp-logo.png" class="app_logo" />
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
         aria-controls="offcanvasNavbar">
@@ -28,7 +28,7 @@
       <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
         <div class="offcanvas-header">
           <h3 class="offcanvas-title" id="offcanvasNavbarLabel">
-            <img src="assets/img/calcuapp-logo.png" class="app_logo"/>
+            <img src="assets/img/calcuapp-logo.png" class="app_logo" />
           </h3>
           <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
@@ -52,6 +52,9 @@
             </li>
             <li class="nav-item">
               <a class="nav-link disabled" href="#">Salary Calculator</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Policy</a>
             </li>
           </ul>
           <footer style="text-align: center;font-size: smaller;bottom: 0;" class="text-muted">
@@ -89,25 +92,27 @@
         </div>
         <div class="col-md">
           <label for="principal" class="form-label"><b>Principal Amount:</b></label>
-          <input min="0" type="number" class="form-control" id="principal" data-field="Principal Amount" placeholder="Principal Amount"/>
+          <input min="0" type="number" class="form-control" id="principal" data-field="Principal Amount"
+            placeholder="Principal Amount" />
         </div>
         <div class="col-md">
           <label for="interest" class="form-label"><b>Interest Rate (%):</b></label>
-          <input min="0" type="number" class="form-control" id="interest" data-field="Rate" placeholder="Interest Rate" />
+          <input min="0" type="number" class="form-control" id="interest" data-field="Rate"
+            placeholder="Interest Rate" />
         </div>
         <div class="col-md">
           <label for="terms" class="form-label"></label><b>Terms:</b></label>
-          <select id="terms"  class="form-control" data-field="Terms"> </select>
+          <select id="terms" class="form-control" data-field="Terms"> </select>
           <!-- <input min="-1" type="number" value="30" class="form-control" id="terms" data-field="Terms" /> -->
         </div>
       </form>
 
       <div class="d-flex gap-1 mt-2">
-        <input type="button" class="btn btn-outline-secondary col-md-6" value="Clear"
-              class="form-control" onclick="reset('interest_form')" />
+        <input type="button" class="btn btn-outline-secondary col-md-6" value="Clear" class="form-control"
+          onclick="reset('interest_form')" />
         <input type="button" class="btn btn-primary col-md-6" value="Calculate" class="form-control"
-              onclick="getValues()" />
-  </div>
+          onclick="getValues()" />
+      </div>
       <div id="Result"></div>
     </div>
 
