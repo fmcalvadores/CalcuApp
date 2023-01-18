@@ -8,11 +8,11 @@ html {
 
 .app_logo
 {
-  width:150px;
+  width:50px;
 }
 
 .active
 {
-  color:#31C48D !important;
+  color:#da1821 !important;
   font-weight: bolder;
 }
